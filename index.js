@@ -31,7 +31,7 @@ helperHash["1000"] = "Thousand";
 helperHash["100000"] = "Lakh";
 helperHash["10000000"] = "Crore";
 
-exports.indianCurrencyToWordsConverter =  function(amount) {
+module.exports =  function(amount) {
     // Removing leading zeros
     amount = Number(amount).toString();
     var amountLength = amount.toString().length;
