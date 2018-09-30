@@ -3,9 +3,6 @@
 # convert-rupees-into-words
 Converts Indian Rupees into words
 
-Converts the Indian Rupees from number to words.
-
-
 ## Installation
 
   `npm install convert-rupees-into-words`
