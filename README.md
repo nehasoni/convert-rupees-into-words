@@ -1,11 +1,10 @@
-[![Build Status](https://travis-ci.org/nehasoni/convert-rupees-into-words.svg?branch=master)](https://travis-ci.org/nehasoni/convert-rupees-into-words)
-
-[![Coverage Status](https://coveralls.io/repos/github/nehasoni/convert-rupees-into-words/badge.svg?branch=feature%2Fupto-nine-digits)](https://coveralls.io/github/nehasoni/convert-rupees-into-words?branch=feature%2Fupto-nine-digits)
+[![Build Status](https://travis-ci.org/nehasoni/convert-rupees-into-words.svg?branch=master)](https://travis-ci.org/nehasoni/convert-rupees-into-words) [![Coverage Status](https://coveralls.io/repos/github/nehasoni/convert-rupees-into-words/badge.svg?branch=feature%2Fupto-nine-digits)](https://coveralls.io/github/nehasoni/convert-rupees-into-words?branch=feature%2Fupto-nine-digits)
 
 # convert-rupees-into-words
 Converts Indian Rupees into words
 
-A small library that adds commas to numbers
+Converts the Indian Rupees from number to words.
+
 
 ## Installation
 
