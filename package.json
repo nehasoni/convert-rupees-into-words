@@ -1,6 +1,6 @@
 {
   "name": "convert-rupees-into-words",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Converts Indian Rupees value from numbers to words.",
   "main": "index.js",
   "scripts": {
