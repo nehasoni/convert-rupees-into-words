@@ -1,5 +1,5 @@
+coverage
 node_modules
-.idea/*
+.idea
 npm-debug.log
 .DS_Store
-coverage
