@@ -31,26 +31,31 @@ helperHash["1000"] = "Thousand";
 helperHash["100000"] = "Lakh";
 helperHash["10000000"] = "Crore";
 
-module.exports =  function(amount) {
-    // Removing leading zeros
-    amount = Number(amount).toString();
-    var amountLength = amount.toString().length;
+module.exports =  convertToWords;
 
-    if(amountLength <= 3) {
-        return getHundredthPlace(amount);
-    }
-    else if(amountLength > 3 && amountLength <=5){
-        return getThousandthPlace(amount);
-    }
-    else if(amountLength > 5 && amountLength <=7){
-        return getLakhsPlace(amount);
-    }
-    else if(amountLength > 7 && amountLength <=9){
-        return getCrorePlace(amount);
-    }
+function convertToWords(amount){
+  // Removing leading zeros
+  amount = Number(amount).toString();
+  var amountLength = amount.toString().length;
+
+  if(amountLength <= 3) {
+    return getHundredthPlace(amount);
+  }
+  else if(amountLength > 3 && amountLength <=5){
+    return getThousandthPlace(amount);
+  }
+  else if(amountLength > 5 && amountLength <=7){
+    return getLakhsPlace(amount);
+  }
+  else if(amountLength > 7 && amountLength <=9){
+    return getCrorePlace(amount);
+  }
+  else {
+    return "";
+  }
 }
 
-var getHundredthPlace = function(lastThreeDigits){
+function getHundredthPlace(lastThreeDigits){
     var result = "";
     if(lastThreeDigits == "000"){
         result = "";
@@ -76,10 +81,13 @@ var getHundredthPlace = function(lastThreeDigits){
         }
         result = finalArray.join(' ');
     }
-    return result;
+    return result.trim();
 }
 
-var getThousandthPlace = function(amount){
+function getThousandthPlace(amount){
+    if (amount == "0") {
+        return '';
+    }
     var firstTwoDigits = Math.floor((amount % 100000)/1000).toString();
     var lastThreeDigits = (amount % 1000).toString();
     var finalArray = [];
@@ -93,10 +101,13 @@ var getThousandthPlace = function(amount){
     }
     finalArray.push(helperHash[1000]);
     finalArray.push(getHundredthPlace(lastThreeDigits));
-    return finalArray.join(' ');
+    return finalArray.join(' ').trim();
 }
 
-var getLakhsPlace = function(amount){
+function getLakhsPlace(amount){
+    if (amount == "0") {
+        return '';
+    }
     var firstTwoDigits = Math.floor((amount % 10000000)/100000).toString();
     var thousandthPlaceDigits = (amount % 100000).toString();
     var finalArray = [];
@@ -110,10 +121,10 @@ var getLakhsPlace = function(amount){
     }
     finalArray.push(helperHash[100000]);
     finalArray.push(getThousandthPlace(thousandthPlaceDigits));
-    return finalArray.join(' ');
+    return finalArray.join(' ').trim();
 }
 
-var getCrorePlace = function(amount){
+function getCrorePlace(amount){
     var firstTwoDigits = Math.floor((amount % 1000000000)/10000000).toString();
     var lakhPlaceDigits = (amount % 10000000).toString();
     var finalArray = [];
@@ -127,5 +138,5 @@ var getCrorePlace = function(amount){
     }
     finalArray.push(helperHash[10000000]);
     finalArray.push(getLakhsPlace(lakhPlaceDigits));
-    return finalArray.join(' ');
+    return finalArray.join(' ').trim();
 }

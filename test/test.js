@@ -14,6 +14,11 @@ describe('#indianCurrencyToWordsConverter', function() {
     expect(result).to.equal('Twelve Thousand Six Hundred Seventy Seven');
   });
 
+  it('should convert 1000 correctly', function() {
+    var result = indianCurrencyToWordsConverter(1000);
+    expect(result).to.equal('One Thousand');
+  });
+
   it('should convert lakhs', function() {
     var result = indianCurrencyToWordsConverter(567123);
     expect(result).to.equal('Five Lakh Sixty Seven Thousand One Hundred Twenty Three');
@@ -27,5 +32,20 @@ describe('#indianCurrencyToWordsConverter', function() {
   it('should convert crores', function() {
     var result = indianCurrencyToWordsConverter(160567123);
     expect(result).to.equal('Sixteen Crore Five Lakh Sixty Seven Thousand One Hundred Twenty Three');
+  });
+
+  it('should convert 10000000 correctly', function() {
+    var result = indianCurrencyToWordsConverter(10000000);
+    expect(result).to.equal('One Crore');
+  });
+
+  it('should convert 10000000 correctly', function() {
+    var result = indianCurrencyToWordsConverter(10000000);
+    expect(result).to.equal('One Crore');
+  });
+
+  it('should convert 10000000000 correctly', function() {
+    var result = indianCurrencyToWordsConverter(1000000000);
+    expect(result).to.equal('');
   });
 });
