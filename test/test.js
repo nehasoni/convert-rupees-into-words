@@ -18,6 +18,11 @@ describe('#indianCurrencyToWordsConverter', function() {
     var result = indianCurrencyToWordsConverter(567123);
     expect(result).to.equal('Five Lakh Sixty Seven Thousand One Hundred Twenty Three');
   });
+  
+  it('should convert 100000 correctly', function() {
+    var result = indianCurrencyToWordsConverter(100000);
+    expect(result).to.equal('One Lakh');
+  });
 
   it('should convert crores', function() {
     var result = indianCurrencyToWordsConverter(160567123);
