@@ -80,6 +80,9 @@ var getHundredthPlace = function(lastThreeDigits){
 }
 
 var getThousandthPlace = function(amount){
+	if (amount == "0") {
+        return '';
+    }
     var firstTwoDigits = Math.floor((amount % 100000)/1000).toString();
     var lastThreeDigits = (amount % 1000).toString();
     var finalArray = [];
@@ -97,6 +100,9 @@ var getThousandthPlace = function(amount){
 }
 
 var getLakhsPlace = function(amount){
+	if (amount == "0") {
+        return '';
+    }
     var firstTwoDigits = Math.floor((amount % 10000000)/100000).toString();
     var thousandthPlaceDigits = (amount % 100000).toString();
     var finalArray = [];
